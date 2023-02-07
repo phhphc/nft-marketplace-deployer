@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  frontend:
+    build:
+      context: https://github.com/phhphc/nft-marketplace-front-end.git#dev
+      args:
+        - BACKEND_URL=http://103.143.143.124:9090/api/v0.1/nft
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
