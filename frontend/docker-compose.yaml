@@ -5,8 +5,8 @@ services:
     build:
       context: https://github.com/phhphc/nft-marketplace-front-end.git#dev
       args:
-        - BACKEND_URL=http://103.143.143.124:9090/api/v0.1/nft
+        - BACKEND_URL=$BACKEND_URL
+        - NEXT_PUBLIC_MKP_ADDRESS=$NEXT_PUBLIC_MKP_ADDRESS
+        - NEXT_PUBLIC_ERC721_ADDRESS=$NEXT_PUBLIC_ERC721_ADDRESS
     ports:
       - 8080:8080
-    env_file:
-      - .env
