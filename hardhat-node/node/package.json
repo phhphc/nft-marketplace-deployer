@@ -1,0 +1,10 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hardhat": "^2.13.0"
+  }
+}
