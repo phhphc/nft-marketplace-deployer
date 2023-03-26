@@ -12,6 +12,7 @@ CMD [  "--datadir=.",\
     "--nodekey=./node.key",\
     "--nodiscover",\
     "--ws","--ws.addr=0.0.0.0", "--ws.port=8545",\
-    "--http","--http.addr=0.0.0.0", "--http.port=8545"]
+    "--http","--http.addr=0.0.0.0", "--http.port=8545",\
+    "--vmdebug"]
 
 
