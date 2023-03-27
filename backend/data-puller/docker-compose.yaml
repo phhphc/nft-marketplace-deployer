@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  data-puller:
+    build:
+      context: https://github.com/phhphc/nft-marketplace-back-end.git#t/ignore-achitecture
+    restart: always
+    command: /app/data-puller
+    env_file:
+      - ../.env
+    networks:
+      - nft-marketplace
+
+networks:
+  nft-marketplace:
+    external: true
