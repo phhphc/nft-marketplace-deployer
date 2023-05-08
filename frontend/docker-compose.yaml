@@ -5,8 +5,10 @@ services:
     build:
       context: https://github.com/phhphc/nft-marketplace-front-end.git#dev
       args:
-        - BACKEND_URL=$BACKEND_URL
         - NEXT_PUBLIC_MKP_ADDRESS=$NEXT_PUBLIC_MKP_ADDRESS
-        - NEXT_PUBLIC_ERC721_ADDRESS=$NEXT_PUBLIC_ERC721_ADDRESS
+        - NEXT_PUBLIC_ERC20_ADDRESS=$NEXT_PUBLIC_ERC20_ADDRESS
+        - BACKEND_URL=$BACKEND_URL
+        - PINATA_URL=$PINATA_URL
+        - NEXT_PUBLIC_JWT_PINATA=$NEXT_PUBLIC_JWT_PINATA
     ports:
       - 8080:8080
