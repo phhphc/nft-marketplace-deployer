@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+  chain-watcher:
+    image: nft-marketplace
+    restart: always
+    command: /app/chain-watcher
+    env_file:
+      - ./.env
+
+  data-puller:
+    image: nft-marketplace
+    restart: always
+    command: /app/data-puller
+    env_file:
+      - ./.env
+
+  api-server:
+    image: nft-marketplace
+    restart: always
+    command: /app/marketplace
+    env_file:
+      - ./.env
+    ports:
+      - 9090:9091
