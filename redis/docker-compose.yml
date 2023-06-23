@@ -1,23 +1,25 @@
 version: "3.2"
 services:
- redis-1:
-    image: "redis:alpine"
+   redis-1:
+      image: "redis:alpine"
+      command: redis-server --requirepass 12345
+      ports:
+         - "6380:6379"
+      environment:
+         - REDIS_REPLICATION_MODE=master
+      networks:
+         - nft-marketplace
 
-    command: redis-server --requirepass 12345
+   redis-2:
+      image: "redis:alpine"
+      command: redis-server --requirepass 12345
+      ports:
+         - "6381:6379"
+      environment:
+         - REDIS_REPLICATION_MODE=master
+      networks:
+         - nft-marketplace
 
-    ports:
-     - "6380:6379"
-
-    environment:
-     - REDIS_REPLICATION_MODE=master
-
- redis-2:
-    image: "redis:alpine"
-
-    command: redis-server --requirepass 12345
-
-    ports:
-     - "6381:6379"
-
-    environment:
-     - REDIS_REPLICATION_MODE=master
+networks:
+   nft-marketplace:
+      external: true
